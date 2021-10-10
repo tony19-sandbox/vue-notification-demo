@@ -9,12 +9,16 @@
 import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from './components/HelloWorld.vue';
 
-@Component({
+@Component<App>({
   components: {
     HelloWorld,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  mounted(): void {
+    this.$notify('hello world')
+  }
+}
 </script>
 
 <style>
